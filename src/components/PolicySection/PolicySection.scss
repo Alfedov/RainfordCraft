@@ -1,0 +1,95 @@
+.policy {
+  background-image: url('../../images/PolicyBg.png');
+  background-size: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #181a22;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 500px;
+    height: 500px;
+    background-image: url('../../images/PolicyIcon.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 80%;
+    display: block;
+  }
+
+  &__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &--left {
+      max-width: 780px;
+
+      &--title {
+        margin-bottom: 20px;
+        h2 {
+          font-weight: bold;
+          font-size: 36px;
+          line-height: 160%;
+          text-transform: uppercase;
+          color: #ffffff;
+          margin: 0;
+        }
+      }
+
+      p {
+        margin: 0;
+        margin-bottom: 50px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+      }
+    }
+
+    &--top {
+      flex: 1 0 auto;
+      padding-top: 160px;
+    }
+
+    &--bottom {
+      flex-shrink: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .policy {
+    &::before {
+      display: none;
+    }
+    &__inner {
+      &--top {
+        padding-top: 100px;
+      }
+
+      &--left {
+        &--title {
+          h2 {
+            font-size: 26px;
+
+            span {
+              font-size: 21px;
+            }
+          }
+        }
+
+        p {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}

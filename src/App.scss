@@ -1,0 +1,88 @@
+body {
+  overflow: hidden;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hex {
+  margin: 200px 0;
+  fill: red;
+}
+
+.headline {
+  &-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-about {
+    h2 {
+      position: relative;
+      z-index: 2;
+
+      &::after {
+        position: absolute;
+        content: 'О SMOTRArage';
+        left: 0%;
+        bottom: -10px;
+        font-weight: bold;
+        white-space: nowrap;
+        font-size: 47px;
+        line-height: 160%;
+        text-transform: uppercase;
+        color: #ffffff;
+        opacity: 0.02;
+        z-index: -1;
+      }
+    }
+  }
+
+  &-instruct {
+    h2 {
+      position: relative;
+      z-index: 2;
+
+      &::after {
+        position: absolute;
+        content: 'Инcтрукция';
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+        font-weight: bold;
+        font-size: 47px;
+        line-height: 160%;
+        text-transform: uppercase;
+        color: #ffffff;
+        opacity: 0.02;
+        z-index: -1;
+      }
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 160%;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .headline {
+    h2 {
+      font-size: 36px;
+
+      &::after {
+        font-size: 82px;
+        bottom: -20px;
+      }
+    }
+  }
+}
+
+input {
+  font-family: 'Montserrat';
+}

@@ -1,0 +1,225 @@
+.rating {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &__top {
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: url('../../images/RatingTopBg.png');
+    background-color: #181a22;
+    background-position: center bottom;
+    background-size: cover;
+    padding-top: 160px;
+
+    &--title {
+      h2 {
+        margin: 0;
+        font-size: 36px;
+        line-height: 160%;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
+    &--sub {
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 160%;
+      color: #ffffff;
+    }
+
+    &--servers {
+      .serverbtn {
+        cursor: pointer;
+        display: inline-block;
+        padding: 14px 38px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+        text-align: center;
+        color: #ffffff;
+        background: radial-gradient(100% 401.67% at 100% 50%, #00fff0 0%, #0267ff 100%);
+        box-shadow: 0px 5px 12px rgba(2, 103, 255, 0.5);
+        border-radius: 10px;
+      }
+    }
+
+    &--filters {
+      margin-top: 60px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+
+      .filter-item {
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        padding: 30px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        min-height: 180px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: border 0.2s ease;
+
+        &::before {
+          position: absolute;
+          display: block;
+          content: '';
+          bottom: -2px;
+          right: 15px;
+          width: 32%;
+          height: 115%;
+          max-height: 200px;
+          background-size: contain;
+          background-position: center bottom;
+          background-repeat: no-repeat;
+        }
+
+        &__inner {
+          max-width: 70%;
+          .top {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 130%;
+            color: #ffffff;
+          }
+
+          .bottom {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 160%;
+            color: #ffffff;
+          }
+        }
+
+        &.kills {
+          background-image: url('../../images/KillsBg.png');
+
+          &::before {
+            background-image: url('../../images/KillsIcon.png');
+          }
+        }
+
+        &.hours {
+          background-image: url('../../images/HoursBg.png');
+          &::before {
+            background-image: url('../../images/HoursIcon.png');
+          }
+        }
+
+        &.money {
+          background-image: url('../../images/MoneyBg.png');
+          &::before {
+            background-image: url('../../images/MoneyIcon.png');
+          }
+        }
+
+        &.active {
+          border: 2px solid #0267ff;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    flex: 1 0 auto;
+    position: relative;
+    background-color: #181a22;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+
+    background-image: url('../../images/RatingTableBg.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 300px;
+
+    &--top {
+      flex: 1 0 auto;
+      min-height: 300px;
+    }
+
+    &--bottom {
+      flex-shrink: 0;
+    }
+
+    &--inner {
+      background-color: #fff;
+    }
+  }
+}
+
+@media only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .filter-item {
+    &.kills {
+      background-image: url('../../images/KillsBg@2x.png');
+
+      &::before {
+        background-image: url('../../images/KillsIcon@2x.png');
+      }
+    }
+
+    &.hours {
+      background-image: url('../../images/HoursBg@2x.png');
+      &::before {
+        background-image: url('../../images/HoursIcon@2x.png');
+      }
+    }
+
+    &.money {
+      background-image: url('../../images/MoneyBg@2x.png');
+      &::before {
+        background-image: url('../../images/MoneyIcon@2x.png');
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .rating {
+    &__top {
+      &--filters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .rating {
+    &__top {
+      &--filters {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .rating {
+    &__top {
+      padding-top: 100px;
+
+      &--title {
+        h2 {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}

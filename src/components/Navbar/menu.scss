@@ -1,0 +1,85 @@
+/**
+  Mobile menu styles
+ */
+.mobilemenu {
+  position: fixed;
+  z-index: 4000;
+  background-color: #191a22;
+  color: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../../images/MobileBg.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 320px;
+
+  .close {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    right: 10px;
+    top: 20px;
+    background-image: url('../../images/CloseIcon.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  &__middle {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+
+    a {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #ffffff;
+      text-decoration: none;
+
+      &.active {
+        color: #01b3f7;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+    font-size: 0;
+
+    a:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+/**
+Retina support
+ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mobilemenu {
+    background-image: url('../../images/MobileBg@2x.png');
+  }
+}

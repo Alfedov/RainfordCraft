@@ -1,0 +1,448 @@
+.michael {
+  position: absolute;
+  left: 45%;
+  bottom: 0;
+  width: 45%;
+  max-width: 430px;
+  display: none;
+  z-index: 2;
+
+  &-min {
+    position: absolute;
+    bottom: 0;
+    display: none;
+    max-width: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.acceptpolicy {
+  font-size: 12px;
+  text-align: center;
+  max-width: 300px;
+
+  line-height: 160%;
+  color: #ffffff;
+  opacity: 0.5;
+
+  &::before {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    content: '';
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAEPDAMODPbyCwr6CAYEDibUykAAAAMUlEQVQI12OAA8Y0EMn5GUTWKzJ0MLD8f8CgXyD6h4Hh/uf1BgwMLPGfBIBy0iowHQAkFwp0742sDgAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center center;
+    border: solid 1px #fff;
+    padding: 1px;
+    border-radius: 3px;
+    position: relative;
+    top: 2px;
+    margin-right: 7px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .michael-min {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .michael {
+    display: block;
+  }
+}
+// donate
+
+.donatescreen {
+  &__form {
+    max-width: 490px;
+
+    &--title {
+      margin-bottom: 40px;
+
+      h1 {
+        margin: 0;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 160%;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin: 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+      }
+    }
+  }
+}
+
+.donateform {
+  .donate-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 300px;
+    gap: 10px;
+  }
+
+  .error {
+    width: 100%;
+    max-width: 300px;
+    font-size: 13px;
+    text-align: center;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background-color: rgba(red, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .prevbtn {
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    text-align: center;
+    color: rgba(#ffffff, 0.5);
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 14px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  input[type='submit'] {
+    background: radial-gradient(100% 401.67% at 100% 50%, #00fff0 0%, #0267ff 100%) !important;
+  }
+
+  input[type='submit'],
+  .donate-submit {
+    background: radial-gradient(100% 401.67% at 100% 50%, #00fff0 0%, #0267ff 100%);
+    text-decoration: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    text-align: center;
+    color: #ffffff;
+    padding: 14px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.2s ease;
+    border: none;
+    margin-top: 20px;
+    display: inline-block;
+
+    &.inactive {
+      transform: none !important;
+      cursor: default !important;
+    }
+
+    &.opacity {
+      opacity: 0.8;
+    }
+
+    &.qiwi {
+      margin-top: 10px;
+      background: radial-gradient(100% 401.67% at 100% 50%, #ff7a00 0%, #ff9f00 100%);
+    }
+
+    &.blue {
+      font-family: 'Montserrat';
+      margin-top: 10px;
+    }
+
+    &.freekassa {
+      font-family: 'Montserrat';
+      margin-top: 10px;
+      background: radial-gradient(100% 401.67% at 100% 50%, #cc0d5a 0%, #b10047 100%);
+    }
+    &:hover {
+      transform: scale(0.97);
+    }
+  }
+
+  &__start {
+    max-width: 300px;
+
+    &.hidden {
+      display: none;
+    }
+
+    .under {
+      margin-top: 15px;
+      max-width: 300px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 160%;
+      color: #ffffff;
+      opacity: 0.5;
+      a {
+        color: #ffffff;
+      }
+    }
+
+    .input-group {
+      background-color: rgba(#20222e, 0.8);
+      margin-bottom: 10px;
+      padding-left: 45px;
+      border-radius: 10px;
+      position: relative;
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+
+      &.final {
+        background-color: transparent;
+        border: 1px solid rgba(#ffffff, 0.4);
+        box-sizing: border-box;
+        border-radius: 10px;
+      }
+
+      .ordinput {
+        font-weight: 600;
+        width: 100%;
+        background-color: transparent;
+        appearance: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        line-height: 50px;
+        font-size: 14px;
+        color: #fff;
+        padding-right: 20px;
+        box-sizing: border-box;
+
+        &.pright {
+          padding-right: 130px;
+        }
+
+        &::placeholder {
+          font-weight: normal;
+        }
+
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+
+      .postext {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 160%;
+        text-align: right;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        color: #ffffff;
+        opacity: 0.4;
+      }
+      .input-icon {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        &.icon-login {
+          background-image: url('../../images/LoginIcon.svg');
+        }
+
+        &.icon-server {
+          background-image: url('../../images/SmotraIcon.svg');
+          background-size: contain;
+        }
+
+        &.icon-money {
+          background-image: url('../../images/MoneyIcon.svg');
+        }
+
+        &.icon-sum {
+          background-image: url('../../images/CheckIcon.svg');
+        }
+      }
+    }
+
+    .nextbtn {
+      background: radial-gradient(100% 401.67% at 100% 50%, #00fff0 0%, #0267ff 100%);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 160%;
+      text-align: center;
+      color: #ffffff;
+      display: inline-block;
+      width: 100%;
+      max-width: 300px;
+      padding: 14px 30px;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: 0.2s ease;
+
+      &:hover {
+        transform: scale(0.97);
+      }
+    }
+  }
+
+  &__finish {
+    &.hidden {
+      display: none;
+    }
+    &--inner {
+      max-width: 300px;
+      border: 1px solid rgba(#ffffff, 0.4);
+      box-sizing: border-box;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .finish-item {
+      padding: 10px 0;
+      border-bottom: solid 1px rgba(#fff, 0.1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .top {
+        font-size: 12px;
+        line-height: 160%;
+        color: #ffffff;
+        margin-bottom: 5px;
+      }
+
+      .bottom {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 160%;
+        padding-left: 24px;
+        position: relative;
+
+        span {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 14px;
+          height: 14px;
+          background-position: center center;
+          background-repeat: no-repeat;
+
+          &.icon-login {
+            background-image: url('../../images/LoginIcon.svg');
+          }
+
+          &.icon-server {
+            background-image: url('../../images/SmotraIcon.svg');
+          }
+
+          &.icon-money {
+            background-image: url('../../images/MoneyIcon.svg');
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .donatescreen {
+    min-height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+
+    .mainsection__inner--left {
+      flex: 1;
+      padding-top: 100px;
+    }
+  }
+
+  .acceptpolicy {
+    margin: 12px auto 0;
+  }
+
+  .donatescreen__form {
+    max-width: 100%;
+
+    .donateform {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__finish {
+        width: 100%;
+
+        &--inner {
+          margin: 0 auto;
+        }
+
+        form {
+          margin: 0 auto;
+          max-width: 300px;
+        }
+
+        > span {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .donatescreen__form--title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      font-size: 26px;
+    }
+
+    p {
+      text-align: center;
+      max-width: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .donatescreen__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

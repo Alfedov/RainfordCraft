@@ -1,0 +1,167 @@
+.socialsection {
+  padding: 40px 20px 0px;
+  background-image: url('../../images/SocialSectionBg.jpg');
+  background-color: #2c2729;
+  background-size: cover;
+  background-position: center top;
+
+  &__inner {
+    &--grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+
+      .item {
+        position: relative;
+        padding: 30px;
+        background-color: deepskyblue;
+        border-radius: 10px;
+        padding: 30px;
+        position: relative;
+
+        &.blue {
+          background: linear-gradient(90deg, #2288ff 0%, #0157ff 100%);
+          box-shadow: 0px 0px 25px rgba(17, 112, 255, 0.5);
+
+          a {
+            color: #2287ff;
+          }
+        }
+
+        &.pink {
+          background: linear-gradient(90deg, #b500f5 0%, #6b008f 100%);
+          box-shadow: 0px 0px 25px rgba(144, 0, 195, 0.5);
+
+          a {
+            color: #b500f5;
+          }
+        }
+
+        &__inner {
+          background-image: url('../../images/SocialCardBg.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center bottom;
+
+          &--left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .top {
+              margin-bottom: 20px;
+              span {
+                background-color: rgba(#fff, 0.1);
+                border-radius: 5px;
+                padding: 5px 10px;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 130%;
+                display: inline-block;
+              }
+            }
+            .middle {
+              text-align: center;
+              flex: 1 0 auto;
+
+              p {
+                margin: 0;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 160%;
+              }
+            }
+            .bottom {
+              padding-top: 250px;
+              z-index: 40;
+
+              a {
+                display: inline-block;
+                background: #ffffff;
+                border-radius: 10px;
+                padding: 14px 30px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 160%;
+                text-decoration: none;
+                transition: 0.2s ease;
+
+                &:hover {
+                  background-color: rgba(#fff, 0.4);
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+        img {
+          position: absolute;
+          bottom: 0;
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .socialsection {
+    &__inner {
+      &--grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        .item {
+          img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45%;
+            transform: none;
+          }
+
+          &__inner {
+            background-image: url('../../images/SocialCardBg.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center right;
+
+            &--left {
+              max-width: 60%;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              min-height: 200px;
+              z-index: 10;
+
+              .middle {
+                flex: 1;
+                text-align: left;
+              }
+              .bottom {
+                margin-top: 45px;
+                padding-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Retina screen graphics @2x
+@media only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  //
+  //.startsection {
+  //  background-image: url('../images/StartBg@2x.png');
+  //  &__inner {background-image: url('../images/StartInnerBg@2x.png');}
+  //  &::before {background-image: url('../images/StartSectionBrushTop@2x.png');}
+  //  &::after {background-image: url('../images/StartSectionBrushBottom@2x.png');}
+  //}
+  //
+  //.socialsection {background-image: url('../images/SocialSectionBg@2x.png');}
+}

@@ -1,0 +1,176 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+@media screen and (min-width: 600px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+//Card styles
+.card {
+  background: #043929;
+  border-radius: 45px;
+
+  &__face {
+    grid-area: 1 / -1 / 1 / -1;
+    backface-visibility: hidden;
+    transition: 0.75s var(--delay) transform;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &--front,
+    &--reverse {
+      padding: 46px 26px 30px;
+      position: relative;
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 130%;
+        text-align: center;
+        color: #ffffff;
+        background: #0267ff;
+        padding: 5px 20px;
+        border-radius: 10px 0px 20px;
+      }
+
+      .card {
+        &-title {
+          margin-bottom: 20px;
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 37px;
+          text-transform: uppercase;
+        }
+
+        &-p {
+          font-size: 14px;
+          line-height: 160%;
+          margin: 0;
+        }
+      }
+    }
+
+    &--front {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 210.4%;
+      /* or 38px */
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-shadow: 0px 4px 100px #000000;
+    }
+
+    &--reverse {
+      z-index: 1;
+      transform: rotateX(calc(180deg * var(--flipped) - 180deg));
+      background: #ececec;
+      color: black;
+      position: relative;
+
+      input {
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        appearance: none;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 160%;
+        text-align: center;
+        color: rgba(#000, 0.5);
+        margin-bottom: 10px;
+        border-radius: 10px;
+        transition: color 0.2s ease;
+
+        &:focus {
+          outline: none;
+          color: #000;
+        }
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        //background-image: url('../../images/CardFlipBlack.svg');
+        background-size: cover;
+        opacity: 0.1;
+        fill: black;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+  }
+}
+
+.card-box {
+  @extend .card__face--front;
+  border-radius: 10px;
+  margin: 0;
+  //background: #01aef8 url('../../images/CardBg4.png') no-repeat center bottom;
+  background-size: cover !important;
+  color: #fff !important;
+
+  // fixed
+}
+
+.card {
+  &__face {
+    &--front,
+    &--reverse {
+      background-size: contain;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@mixin cardBg($child, $bg) {
+  .card:nth-child(#{$child}) {
+    .card__face--front,
+    .card__face--reverse {
+      background-image: url(#{$bg});
+    }
+  }
+}
+
+//@include cardBg(1, '../../images/CardBg1.png');
+//@include cardBg(2, '../../images/CardBg2.png');
+//@include cardBg(3, '../../images/CardBg3.png');
+//
+///* Retina display graphic */
+//@media only screen and (min-device-pixel-ratio: 2),
+//only screen and (min-resolution: 192dpi),
+//only screen and (min-resolution: 2dppx) {
+//  @include cardBg(1, '../../images/CardBg1@2x.png');
+//  @include cardBg(2, '../../images/CardBg2@2x.png');
+//  @include cardBg(3, '../../images/CardBg3@2x.png');
+//  .card-box {
+//    background-image: url('../../images/CardBg4@2x.png');
+//  }
+//}

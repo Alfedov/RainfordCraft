@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+.startsection {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url('../../images/bg_about.png');
+  background-color: #101010;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+
+  &__inner {
+    padding-top: 240px;
+    background-size: 300px;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    padding-bottom: 300px;
+
+    &--title {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 73px;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-shadow: 0px 4px 100px #000000;
+      margin-bottom: 40px;
+
+      h2 {
+        margin: 0;
+      }
+
+      span {
+        color: #043929;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .startsection {
+    position: relative;
+
+    &__inner {
+      //padding-bottom: 80px;
+      //background-position: center right;
+      //background-size: contain;
+    }
+  }
+}
+
+@media screen and (max-width: 799.99px) {
+  .startsection {
+    overflow: hidden;
+  }
+}
+
+/**
+Retina support
+ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .startsection {
+    &__inner {
+      //background-image: url('../../images/StartInnerBg@2x.png');
+    }
+  }
+}
